@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal, Animated } from 'react-native'
 import { COLORS, SIZES } from '../constants';
-import data from '../data/QuizData';
+import data from '../data/QuizData1';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Quiz = () => {
+const Quiz1 = () => {
 
     const allQuestions = data;
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -280,4 +280,4 @@ const Quiz = () => {
     )
 }
 
-export default Quiz
+export default Quiz1
