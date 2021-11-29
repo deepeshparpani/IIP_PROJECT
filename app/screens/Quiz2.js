@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal, Animated } from 'react-native'
 import { COLORS, SIZES } from '../constants';
-import data from '../data/QuizData';
+import data from '../data/QuizData1';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import doctor from './doctor';
 
-const Quiz = ({navigation}) => {
+const Quiz2 = () => {
 
     const allQuestions = data;
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -245,7 +244,7 @@ const Quiz = ({navigation}) => {
                            </View>
                            {/* Retry Quiz button */}
                            <TouchableOpacity
-                           onPress={ () => navigation.navigate('doctor') }
+                           onPress={restartQuiz}
                            style={{
                                backgroundColor: COLORS.accent,
                                padding: 20, width: '100%', borderRadius: 20
@@ -281,4 +280,4 @@ const Quiz = ({navigation}) => {
     )
 }
 
-export default Quiz
+export default Quiz2
