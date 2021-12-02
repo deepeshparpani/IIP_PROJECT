@@ -227,7 +227,10 @@ const Quiz = ({navigation}) => {
                            padding: 20,
                            alignItems: 'center'
                        }}>
-                           <Text style={{fontSize: 30, fontWeight: 'bold'}}>{ score> ((allQuestions.length*3)/2) ? 'Congratulations!' : 'Oops!' }</Text>
+                            <Text style={{fontSize: 30, fontWeight: 'bold',textAlign: 'center'}}>{ 
+                           score> ((allQuestions.length*3)*2/3) ? 'You might have severe Depression'
+                           : 'You might have mild Depression'
+                           }</Text>
 
                            <View style={{
                                flexDirection: 'row',
@@ -245,14 +248,14 @@ const Quiz = ({navigation}) => {
                            </View>
                            {/* Retry Quiz button */}
                            <TouchableOpacity
-                           onPress={ () => navigation.navigate('doctor') }
+                           onPress={ () => navigation.navigate('Doctor Details') }
                            style={{
                                backgroundColor: COLORS.accent,
                                padding: 20, width: '100%', borderRadius: 20
                            }}>
                                <Text style={{
                                    textAlign: 'center', color: COLORS.white, fontSize: 20
-                               }}>Retry Quiz</Text>
+                               }}>Contact Doctor</Text>
                            </TouchableOpacity>
 
                        </View>

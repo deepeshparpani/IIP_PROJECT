@@ -3,8 +3,9 @@ import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal, An
 import { COLORS, SIZES } from '../constants';
 import data from '../data/QuizData1';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import doctor from './doctor';
 
-const Quiz2 = () => {
+const Quiz2 = ({navigation}) => {
 
     const allQuestions = data;
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -226,7 +227,12 @@ const Quiz2 = () => {
                            padding: 20,
                            alignItems: 'center'
                        }}>
-                           <Text style={{fontSize: 30, fontWeight: 'bold'}}>{ score> ((allQuestions.length*3)/2) ? 'Congratulations!' : 'Oops!' }</Text>
+                           <Text style={{fontSize: 30, fontWeight: 'bold'}}>{ 
+                           score> ((allQuestions.length*3)*2/3) ? 'You might have severe Depression'
+                           : 'You might have mild Depression'
+                           }
+                        
+                            </Text>
 
                            <View style={{
                                flexDirection: 'row',
@@ -244,14 +250,14 @@ const Quiz2 = () => {
                            </View>
                            {/* Retry Quiz button */}
                            <TouchableOpacity
-                           onPress={restartQuiz}
+                           onPress={ () => navigation.navigate('doctor') }
                            style={{
                                backgroundColor: COLORS.accent,
                                padding: 20, width: '100%', borderRadius: 20
                            }}>
                                <Text style={{
                                    textAlign: 'center', color: COLORS.white, fontSize: 20
-                               }}>Retry Quiz</Text>
+                               }}>Contact Doctor</Text>
                            </TouchableOpacity>
 
                        </View>

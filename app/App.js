@@ -31,7 +31,7 @@ export default function App() {
         <Stack.Screen name='PTSD Test' component={ Quiz3 } />
         <Stack.Screen name='Addiction Test' component={ Quiz4 } />
         <Stack.Screen name='Psychosis Test' component={ Quiz5 } />
-        <Stack.Screen name='doctor' component={ doctor } />
+        <Stack.Screen name='Doctor Details' component={ doctor } />
       </Stack.Navigator>
     </NavigationContainer>
   );

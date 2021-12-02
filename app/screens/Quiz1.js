@@ -3,8 +3,9 @@ import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal, An
 import { COLORS, SIZES } from '../constants';
 import data from '../data/QuizData1';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import doctor from './doctor';
 
-const Quiz1 = () => {
+const Quiz1 = ({navigation}) => {
 
     const allQuestions = data;
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -226,7 +227,11 @@ const Quiz1 = () => {
                            padding: 20,
                            alignItems: 'center'
                        }}>
-                           <Text style={{fontSize: 30, fontWeight: 'bold'}}>{ score> ((allQuestions.length*3)/2) ? 'Congratulations!' : 'Oops!' }</Text>
+                           <Text style={{fontSize: 30, fontWeight: 'bold',textAlign: 'center'}}>{ 
+                           score> ((allQuestions.length*3)*2/3) ? 'You might have severe Anxiety Disorder'
+                           : 'You might have mild Anxiety Disorder'
+                           }</Text>
+
 
                            <View style={{
                                flexDirection: 'row',
@@ -244,14 +249,14 @@ const Quiz1 = () => {
                            </View>
                            {/* Retry Quiz button */}
                            <TouchableOpacity
-                           onPress={restartQuiz}
+                           onPress={ () => navigation.navigate('Doctor Details') }
                            style={{
                                backgroundColor: COLORS.accent,
                                padding: 20, width: '100%', borderRadius: 20
                            }}>
                                <Text style={{
                                    textAlign: 'center', color: COLORS.white, fontSize: 20
-                               }}>Retry Quiz</Text>
+                               }}>Contact Doctor</Text>
                            </TouchableOpacity>
 
                        </View>
